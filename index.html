@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auduvant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #02A9EA;
+      color: #ffffff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #0081B3;
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .container {
+      padding: 80px 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      background: #0081B3;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Auduvant Technologies</div>
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('aboutus')">About Us</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- HOME -->
+  <div id="home" class="section active">
+    <h1>Funding Made Simple for Startups</h1>
+    <p>
+      Auduvant Technologies specializes in software solutions that serve to simplify how startups find and secure funding.
+      Our flagship product Genvium is currently live.
+    </p>
+
+    <p>
+      Beyond discovery, Genvium provides direct links to external applications and tools to help you
+      track your submissions, deadlines, and progress—all in one place. Whether you're just starting out
+      or scaling, Genvium streamlines the entire funding process so you can focus on building your business.
+    </p>
+  </div>
+
+  <!-- ABOUT US -->
+  <div id="aboutus" class="section">
+    <h1>About Us</h1>
+    <div class="card">
+      <p>Auduvant Technologies was started by Ken Mutiso.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="section">
+    <h1>Contact Us</h1>
+    <div class="card">
+      <p>If you need any assistance reach out to us at:</p>
+      <p><b>info@auduvanttechnologies.com</b></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
