@@ -78,15 +78,8 @@
     }
 
     @keyframes fade {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .hero {
@@ -130,6 +123,7 @@
       padding: 14px 24px;
       border-radius: 10px;
       font-weight: bold;
+      cursor: pointer;
     }
 
     .secondary-btn {
@@ -138,6 +132,7 @@
       border-radius: 10px;
       color: #222;
       background: white;
+      cursor: pointer;
     }
 
     .hero-image {
@@ -274,6 +269,57 @@
       color: #4b5563;
     }
 
+    /* ── Legal pages ── */
+    .legal-page {
+      max-width: 900px;
+      margin: auto;
+      padding: 80px 40px;
+    }
+
+    .legal-page h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: #0d1117;
+    }
+
+    .legal-page .last-updated {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 40px;
+    }
+
+    .legal-page h2 {
+      font-size: 22px;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .legal-page h3 {
+      font-size: 17px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .legal-page p {
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+
+    .legal-page ul {
+      color: #4b5563;
+      padding-left: 22px;
+      margin-bottom: 12px;
+      line-height: 1.9;
+    }
+
+    .legal-page a {
+      color: #0a84ff;
+    }
+
+    /* ── Footer ── */
     footer {
       background: #f4f5f7;
       border-top: 1px solid #e3e3e3;
@@ -299,6 +345,11 @@
       display: block;
       margin-bottom: 12px;
       color: #4b5563;
+      cursor: pointer;
+    }
+
+    .footer-grid a:hover {
+      color: #0a84ff;
     }
 
     .footer-grid p {
@@ -313,10 +364,28 @@
       border-top: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
       color: #666;
       font-size: 14px;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal-links a {
+      color: #666;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .footer-legal-links a:hover {
+      color: #0a84ff;
     }
 
     .email {
@@ -324,8 +393,7 @@
       color: #111;
     }
 
-    @media(max-width: 900px) {
-
+    @media (max-width: 900px) {
       .hero,
       .stats-header,
       .product-hero,
@@ -338,7 +406,8 @@
       .hero h1,
       .product-hero h1,
       .stats-header h2,
-      .about-page h1 {
+      .about-page h1,
+      .legal-page h1 {
         font-size: 42px;
       }
 
@@ -352,6 +421,7 @@
       .stats-section,
       .product-page,
       .about-page,
+      .legal-page,
       footer {
         padding-left: 20px;
         padding-right: 20px;
@@ -364,16 +434,12 @@
 
   <header>
     <div class="logo">Auduvant Technologies</div>
-
     <nav>
       <a onclick="showSection('home')">Home</a>
       <a onclick="showSection('product')">Genvium</a>
       <a onclick="showSection('about')">About Us</a>
       <a onclick="showSection('contact')">Contact</a>
-
-      <a class="nav-btn" href="https://www.genvium.com" target="_blank">
-        Visit Genvium
-      </a>
+      <a class="nav-btn" href="https://www.genvium.com" target="_blank">Visit Genvium</a>
     </nav>
   </header>
 
@@ -381,41 +447,25 @@
   <section id="home" class="section active">
 
     <div class="hero">
-
       <div class="hero-content">
-        <h1>
-          Software solutions built for ambitious startups
-        </h1>
-
+        <h1>Software solutions built for ambitious startups</h1>
         <p>
           At Auduvant Technologies, we build modern software solutions that help startups
           discover, organize, and manage funding opportunities more efficiently.
           Our goal is simple — reduce the time founders spend searching and give them
           more time to focus on building.
         </p>
-
         <div class="hero-buttons">
-          <a class="primary-btn" onclick="showSection('product')">
-            Explore Genvium
-          </a>
-
-          <a class="secondary-btn" onclick="showSection('about')">
-            Learn more
-          </a>
+          <a class="primary-btn" onclick="showSection('product')">Explore Genvium</a>
+          <a class="secondary-btn" onclick="showSection('about')">Learn more</a>
         </div>
       </div>
-
       <div class="hero-image"></div>
-
     </div>
 
     <div class="stats-section">
-
       <div class="stats-header">
-        <h2>
-          Helping startups navigate funding opportunities faster
-        </h2>
-
+        <h2>Helping startups navigate funding opportunities faster</h2>
         <p>
           We believe founders should spend less time searching through fragmented
           information and more time building sustainable companies. Our platform
@@ -424,205 +474,251 @@
       </div>
 
       <div class="stats-grid">
-
         <div class="stat-card">
-          <div>
-            <h3>15+</h3>
-          </div>
-
+          <div><h3>15+</h3></div>
           <div>
             <h4>Early platform users</h4>
-            <p>
-              Genvium has already welcomed its first group of startup founders during launch.
-            </p>
+            <p>Genvium has already welcomed its first group of startup founders during launch.</p>
           </div>
         </div>
-
         <div class="stat-card">
-          <div>
-            <h3>1</h3>
-          </div>
-
+          <div><h3>1</h3></div>
           <div>
             <h4>Centralized platform</h4>
-            <p>
-              Funding resources organized into one searchable desktop application experience.
-            </p>
+            <p>Funding resources organized into one searchable desktop application experience.</p>
           </div>
         </div>
-
         <div class="stat-card">
-          <div>
-            <h3>24/7</h3>
-          </div>
-
+          <div><h3>24/7</h3></div>
           <div>
             <h4>Accessible research</h4>
-            <p>
-              Search and review grants, tax credits, and startup funding programs anytime.
-            </p>
+            <p>Search and review grants, tax credits, and startup funding programs anytime.</p>
           </div>
         </div>
-
       </div>
-
     </div>
 
   </section>
 
-  <!-- PRODUCT PAGE -->
+  <!-- PRODUCT -->
   <section id="product" class="section">
-
     <div class="product-page">
-
       <div class="product-hero">
-
         <div>
-          <h1>
-            Genvium
-          </h1>
-
+          <h1>Genvium</h1>
           <p>
             Genvium is our flagship desktop platform designed to help startups
             identify, organize, and explore funding opportunities through a
             centralized searchable database.
           </p>
-
           <p>
             The platform brings together grants, tax credits, startup incentive
             programs, and other funding resources into one streamlined experience,
             helping founders spend less time researching and more time executing.
           </p>
-
           <p>
             During its first month after launch, Genvium welcomed over 15 early users —
             an encouraging start as we continue improving the platform and expanding
             available funding resources.
           </p>
-
           <div class="hero-buttons">
-            <a class="primary-btn" href="https://www.genvium.com" target="_blank">
-              Visit www.genvium.com
-            </a>
+            <a class="primary-btn" href="https://www.genvium.com" target="_blank">Visit www.genvium.com</a>
           </div>
         </div>
-
-        <img
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-          alt="Startup founders collaborating" />
-
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Startup founders collaborating" />
       </div>
 
       <div class="product-grid">
-
         <div class="feature-card">
           <h3>Centralized discovery</h3>
-
-          <p>
-            Browse funding opportunities from multiple sources through a single,
-            organized platform experience.
-          </p>
+          <p>Browse funding opportunities from multiple sources through a single, organized platform experience.</p>
         </div>
-
         <div class="feature-card">
           <h3>Searchable database</h3>
-
-          <p>
-            Quickly filter and review opportunities relevant to your startup,
-            industry, and stage of growth.
-          </p>
+          <p>Quickly filter and review opportunities relevant to your startup, industry, and stage of growth.</p>
         </div>
-
         <div class="feature-card">
           <h3>Built for founders</h3>
-
-          <p>
-            Designed to simplify funding research workflows so startups can move
-            faster with greater clarity.
-          </p>
+          <p>Designed to simplify funding research workflows so startups can move faster with greater clarity.</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
-
     <div class="about-page">
-
-      <h1>
-        About Auduvant Technologies
-      </h1>
-
-      <p>
-        Auduvant Technologies is focused on building practical software solutions
-        that support startups and growing businesses.
-      </p>
-
-      <p>
-        We believe access to organized information can significantly improve how
-        founders discover opportunities and make strategic decisions. Our work
-        centers around creating tools that simplify complex research processes
-        and improve accessibility to valuable resources.
-      </p>
-
-      <p>
-        Through our flagship platform Genvium, we are building a more streamlined
-        approach to startup funding discovery and organization.
-      </p>
-
+      <h1>About Auduvant Technologies</h1>
+      <p>Auduvant Technologies is focused on building practical software solutions that support startups and growing businesses.</p>
+      <p>We believe access to organized information can significantly improve how founders discover opportunities and make strategic decisions. Our work centers around creating tools that simplify complex research processes and improve accessibility to valuable resources.</p>
+      <p>Through our flagship platform Genvium, we are building a more streamlined approach to startup funding discovery and organization.</p>
     </div>
-
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
-
     <div class="about-page">
-
-      <h1>
-        Contact Us
-      </h1>
-
-      <p>
-        We'd love to hear from founders, partners, and organizations interested
-        in what we're building.
-      </p>
-
-      <p class="email">
-        info@auduvanttechnologies.com
-      </p>
-
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from founders, partners, and organizations interested in what we're building.</p>
+      <p class="email">info@auduvanttechnologies.com</p>
     </div>
+  </section>
 
+  <!-- GENERAL TERMS OF USE -->
+  <section id="terms" class="section">
+    <div class="legal-page">
+      <h1>General Terms of Use</h1>
+      <p class="last-updated">Last updated: June 2026</p>
+
+      <p>These Terms of Use ("Terms") govern access to and use of websites, applications, software, products, and services operated by Auduvant Technologies ("Auduvant," "we," "our," or "us"). By accessing, downloading, installing, or using any Auduvant service, you agree to these Terms. If you do not agree with these Terms, you should not access or use our services.</p>
+
+      <h2>1. About Auduvant Technologies</h2>
+      <p>Auduvant Technologies develops software products, platforms, and digital services designed to help organizations and individuals solve practical problems through technology. Our services may include:</p>
+      <ul>
+        <li>Software applications</li>
+        <li>Web platforms</li>
+        <li>Desktop applications</li>
+        <li>Digital tools</li>
+        <li>Related technology services</li>
+      </ul>
+      <p>Individual products may have additional product-specific terms, policies, or documentation that apply alongside these Terms.</p>
+
+      <h2>2. Eligibility and Acceptable Use</h2>
+      <p>You may use Auduvant services only in compliance with applicable laws and regulations. By using our services, you agree that you will not:</p>
+      <ul>
+        <li>Use our services for unlawful, harmful, fraudulent, or abusive purposes</li>
+        <li>Attempt to disrupt, damage, or interfere with our services</li>
+        <li>Circumvent security measures or access restrictions</li>
+        <li>Reverse engineer, decompile, or attempt to extract source code except where permitted by law</li>
+        <li>Misrepresent your identity or misuse another user's information</li>
+        <li>Use our services in a manner that negatively impacts other users or our systems</li>
+      </ul>
+
+      <h2>3. Access and Use License</h2>
+      <p>Subject to these Terms, Auduvant Technologies grants users a limited, non-exclusive, non-transferable, revocable license to access and use our services for their intended purposes. This license does not transfer ownership of any Auduvant software, technology, intellectual property, or materials.</p>
+
+      <h2>4. Intellectual Property</h2>
+      <p>All Auduvant products, services, software, branding, designs, interfaces, documentation, graphics, written materials, and related technology are owned by Auduvant Technologies unless otherwise stated. No rights are granted except those expressly provided under these Terms. Auduvant trademarks, logos, product names, and branding may not be used without prior written permission. Third-party technologies and trademarks remain the property of their respective owners.</p>
+
+      <h2>5. Third-Party Services</h2>
+      <p>Auduvant services may include integrations, links, or references to third-party services. We do not control and are not responsible for:</p>
+      <ul>
+        <li>Third-party websites</li>
+        <li>External services</li>
+        <li>Third-party content</li>
+        <li>Availability or reliability of external platforms</li>
+        <li>Third-party privacy practices</li>
+      </ul>
+      <p>Use of third-party services is subject to their own terms and policies.</p>
+
+      <h2>6. Software and Service Availability</h2>
+      <p>Auduvant services may change, improve, pause, or discontinue features over time. We do not guarantee that services will always be available, error-free, uninterrupted, or compatible with every device or environment. Certain products or features may be provided as beta, preview, or early-access releases.</p>
+
+      <h2>7. User Data and Privacy</h2>
+      <p>Auduvant collects and processes information according to our Privacy Policy and applicable data practices. Different products may collect different information depending on their functionality. Users should review applicable product-specific privacy documentation before using individual services.</p>
+
+      <h2>8. Payments and Subscriptions</h2>
+      <p>Certain Auduvant products or services may include paid features, subscriptions, or purchases. Where applicable, pricing will be presented before purchase and payment terms may apply. Subscription details may be provided separately.</p>
+
+      <h2>9. Disclaimers</h2>
+      <p>Auduvant services are provided on an "as is" and "as available" basis. To the maximum extent permitted by law, Auduvant disclaims warranties including accuracy, reliability, availability, fitness for a particular purpose, and non-infringement. We do not guarantee that services will meet every user's expectations or requirements.</p>
+
+      <h2>10. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Auduvant Technologies shall not be liable for loss of profits, business interruption, loss of data, indirect or consequential damages, reliance on information provided through our services, or third-party service failures. Use of Auduvant services is at the user's own risk.</p>
+
+      <h2>11. Termination</h2>
+      <p>Auduvant may suspend or terminate access to services if these Terms are violated, security concerns arise, misuse of services occurs, or required by law. Users may stop using services at any time.</p>
+
+      <h2>12. Changes to These Terms</h2>
+      <p>Auduvant may update these Terms periodically to reflect new products or services, changes in operations, legal requirements, or platform updates. Updated Terms will be posted with a revised date. Continued use of services after updates indicates acceptance of the revised Terms.</p>
+
+      <h2>13. Governing Law</h2>
+      <p>These Terms shall be governed by and interpreted according to applicable laws of the jurisdiction in which Auduvant Technologies operates, without regard to conflict of law principles.</p>
+
+      <h2>14. Contact</h2>
+      <p>Questions regarding these Terms may be directed to: <a href="mailto:info@auduvanttechnologies.com">info@auduvanttechnologies.com</a></p>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section id="privacy" class="section">
+    <div class="legal-page">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: June 2026</p>
+
+      <p>This Privacy Policy describes how Auduvant Technologies ("we," "our," or "us") collects, uses, processes, stores, and protects information in connection with Genvium and related websites, applications, software, and services (collectively, the "Services"). By accessing or using the Services, you acknowledge the practices described in this Privacy Policy.</p>
+
+      <h2>1. Information We Collect</h2>
+      <p>We may collect certain information directly from users, automatically through use of the Services, or from third-party service providers.</p>
+
+      <h3>Information You Voluntarily Provide</h3>
+      <p>This may include contact information such as email addresses, communications and support inquiries, feedback submissions, waitlist or early-access requests, and other information voluntarily submitted through the Services.</p>
+
+      <h3>Automatically Collected Information</h3>
+      <p>When users access the Services, certain technical and usage information may be collected automatically, including:</p>
+      <ul>
+        <li>Device and browser information</li>
+        <li>Operating system information</li>
+        <li>IP address and approximate geographic region</li>
+        <li>Usage and interaction data</li>
+        <li>Website navigation activity</li>
+        <li>Download activity</li>
+        <li>Referral and traffic source information</li>
+        <li>Session and performance analytics</li>
+      </ul>
+
+      <h3>Third-Party Information</h3>
+      <p>We may receive limited information from third-party platforms, hosting providers, analytics services, or infrastructure providers necessary to operate and maintain the Services.</p>
+
+      <h2>2. How We Use Information</h2>
+      <p>We may use collected information to operate and maintain the Services, improve platform functionality and user experience, monitor platform usage and engagement, respond to inquiries and support requests, analyze performance and technical issues, develop new features and products, maintain platform security and reliability, comply with legal obligations, and protect against misuse, fraud, or unauthorized activity.</p>
+
+      <h2>3. Analytics and Cookies</h2>
+      <p>Auduvant Technologies may use analytics technologies, cookies, and similar tools to understand how users interact with the Services. This may include Google Analytics (GA4), essential session technologies, and performance and usage analytics tools. These technologies may collect device identifiers, browser information, session activity, interaction events, and approximate location data. Users may manage or disable cookies through their browser settings. Disabling certain cookies may affect portions of the Services.</p>
+
+      <h2>4. Legal Basis for Processing</h2>
+      <p>Where required by applicable law, we process personal information based on legitimate interests in operating and improving the Services, user consent, compliance with legal obligations, protection of security and platform integrity, and performance of requested services or communications.</p>
+
+      <h2>5. Sharing of Information</h2>
+      <p>We do not sell personal information to third parties. We may share limited information with hosting and infrastructure providers, analytics and monitoring providers, security and operational service providers, professional advisors where necessary, and authorities where legally required. Third-party providers may process information solely as necessary to provide their services.</p>
+
+      <h2>6. International Data Processing</h2>
+      <p>Information may be processed, transferred, or stored in multiple jurisdictions, including Canada, the United States, and other regions where service providers or infrastructure operate. By using the Services, users acknowledge that information may be transferred outside their jurisdiction of residence, subject to applicable legal protections.</p>
+
+      <h2>7. Data Retention</h2>
+      <p>We retain information only for as long as reasonably necessary to operate and improve the Services, fulfill legitimate business purposes, comply with legal obligations, resolve disputes, and enforce agreements. Retention periods may vary depending on the type of information and operational requirements.</p>
+
+      <h2>8. Data Security</h2>
+      <p>We take reasonable administrative, technical, and organizational measures intended to protect information against unauthorized access, misuse, disclosure, or loss. However, no method of electronic transmission or storage can be guaranteed to be completely secure.</p>
+
+      <h2>9. User Rights</h2>
+      <p>Depending on applicable law, users may have rights regarding their personal information, including access to collected information, correction of inaccurate information, deletion of personal information, restriction or objection to certain processing, data portability where applicable, and withdrawal of consent where consent is relied upon. Requests may be submitted to <a href="mailto:info@auduvanttechnologies.com">info@auduvanttechnologies.com</a>. We may request verification of identity before fulfilling certain requests.</p>
+
+      <h2>10. Children's Privacy</h2>
+      <p>The Services are not directed toward children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that such information has been collected unintentionally, we will take reasonable steps to remove it.</p>
+
+      <h2>11. Third-Party Services and Links</h2>
+      <p>The Services may contain links to external websites, funding providers, or third-party resources. We are not responsible for third-party privacy practices, external content, third-party security practices, or availability or operation of external services. Users interact with third-party services at their own discretion and risk.</p>
+
+      <h2>12. Changes to This Privacy Policy</h2>
+      <p>This Privacy Policy may be updated periodically to reflect changes in services, technologies, operational practices, legal obligations, or regulatory requirements. Updated versions will be posted with a revised "Last updated" date. Continued use of the Services following updates indicates acknowledgment of the revised policy.</p>
+
+      <h2>13. Contact</h2>
+      <p>Questions regarding this Privacy Policy or privacy-related requests may be directed to: <a href="mailto:info@auduvanttechnologies.com">info@auduvanttechnologies.com</a></p>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-
     <div class="footer-grid">
-
       <div>
-        <div class="logo" style="margin-bottom:20px;">
-          Auduvant Technologies
-        </div>
-
-        <p>
-          Building modern software solutions that help startups access
-          and organize funding opportunities more effectively.
-        </p>
-
-        <p class="email">
-          info@auduvanttechnologies.com
-        </p>
+        <div class="logo" style="margin-bottom:20px;">Auduvant Technologies</div>
+        <p>Building modern software solutions that help startups access and organize funding opportunities more effectively.</p>
+        <p class="email">info@auduvanttechnologies.com</p>
       </div>
 
       <div>
         <h3>Navigation</h3>
-
         <a onclick="showSection('home')">Home</a>
         <a onclick="showSection('product')">Genvium</a>
         <a onclick="showSection('about')">About Us</a>
@@ -631,43 +727,27 @@
 
       <div>
         <h3>Social Media</h3>
-
-        <!-- Replace # with your links later -->
         <a href="#">LinkedIn</a>
         <a href="#">Twitter / X</a>
         <a href="#">Instagram</a>
         <a href="#">YouTube</a>
       </div>
-
     </div>
 
     <div class="footer-bottom">
-      <div>
-        © 2026 Auduvant Technologies. All rights reserved.
-      </div>
-
-      <div>
-        Built to support startups with modern software solutions.
+      <div>© 2026 Auduvant Technologies. All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a onclick="showSection('terms')">Terms of Use</a>
+        <a onclick="showSection('privacy')">Privacy Policy</a>
       </div>
     </div>
-
   </footer>
 
   <script>
     function showSection(id) {
-
-      const sections = document.querySelectorAll('.section');
-
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
