@@ -64,22 +64,23 @@
         return;
       }
       
-      const scriptURL = 'https://script.google.com/macros/s/AKfycby7xR1HUfH9Nc22s3ZC6lZPnk2OCazAaWIh1i4GJF_rjDUiCzC5C60L-VmDXki8tgVy/exec';
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycby7xR1HUfH9Nc22s3ZC6lZPnk2OCazAaWIh1i4GJF_rjDUiCzC5C60L-VmDXki8tgVy/exec';
+      form.target = '_blank';
       
-      fetch(scriptURL, {
-        method: 'POST',
-        body: new URLSearchParams({ email: email })
-      })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('status').innerText = '✓ You have been unsubscribed.';
-        document.getElementById('email').disabled = true;
-        document.querySelector('button').disabled = true;
-      })
-      .catch(error => {
-        document.getElementById('status').innerText = '✗ Error. Please try again.';
-        console.error('Error:', error);
-      });
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'email';
+      input.value = email;
+      form.appendChild(input);
+      
+      document.body.appendChild(form);
+      form.submit();
+      
+      document.getElementById('status').innerText = '✓ You have been unsubscribed.';
+      document.getElementById('email').disabled = true;
+      document.querySelector('button').disabled = true;
     }
   </script>
 </body>
