@@ -54,7 +54,6 @@
     <p id="status"></p>
   </div>
 
-  <!-- Hidden iframe that quietly receives Google's submit confirmation -->
   <iframe name="hidden_iframe" style="display:none;"></iframe>
 
   <script>
@@ -68,13 +67,12 @@
         return;
       }
 
-      // Your Google Form endpoint
-      const googleFormUrl = 'https://docs.google.com/forms/d/14Eyra7R0S0hBxtd0oaT-15ilK_HE8kkesuPknPOB2r8/formResponse';
+      // Verified public Form Response URL
+      const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScPVixtaGVmuotVOYmt47zQuoEnMlGVeMqDxrH-Og1kq2Ot7A/formResponse';
       
-      // Your exact entry ID
+      // Your entry ID
       const entryId = 'entry.2125860721';
 
-      // Create a background form to send the email
       const form = document.createElement('form');
       form.action = googleFormUrl;
       form.method = 'POST';
@@ -89,7 +87,6 @@
       document.body.appendChild(form);
       form.submit();
 
-      // Instantly confirm to the user
       status.style.color = '#27ae60';
       status.innerText = '✓ You have been unsubscribed.';
       document.getElementById('email').disabled = true;
