@@ -39,7 +39,7 @@ Auduvant Technologies is committed to developing modern software solutions that 
 
 For inquiries or partnerships:
 
-**info@auduvanttechnologies.com**
+**support@auduvanttechnologies.com**
 
 ---
 
