@@ -256,6 +256,74 @@
     .feature-card p { 
       color: #4b5563; 
     }
+    .zawadi-page { 
+      max-width: 1200px; 
+      margin: auto; 
+      padding: 80px 40px; 
+    }
+    .zawadi-hero { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 50px; 
+      align-items: center; 
+      margin-bottom: 70px; 
+    }
+    .zawadi-hero img { 
+      width: 100%; 
+      border-radius: 24px; 
+      object-fit: cover; 
+      height: 500px; 
+    }
+    .zawadi-hero h1 { 
+      font-size: 58px; 
+      line-height: 1.1; 
+      margin-bottom: 24px; 
+    }
+    .zawadi-hero p { 
+      font-size: 18px; 
+      color: #4b5563; 
+      margin-bottom: 20px; 
+    }
+    .zawadi-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 24px; 
+      margin-top: 50px; 
+    }
+    .games-page { 
+      max-width: 1200px; 
+      margin: auto; 
+      padding: 80px 40px; 
+    }
+    .games-hero { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 50px; 
+      align-items: center; 
+      margin-bottom: 70px; 
+    }
+    .games-hero img { 
+      width: 100%; 
+      border-radius: 24px; 
+      object-fit: cover; 
+      height: 500px; 
+    }
+    .games-hero h1 { 
+      font-size: 58px; 
+      line-height: 1.1; 
+      margin-bottom: 24px; 
+    }
+    .games-hero p { 
+      font-size: 18px; 
+      color: #4b5563; 
+      margin-bottom: 20px; 
+    }
+    .games-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 24px; 
+      margin-top: 50px; 
+    }
     .about-page { 
       max-width: 1000px; 
       margin: auto; 
@@ -408,9 +476,10 @@
     <nav>
       <button class="link-btn" onclick="showSection('home')">Home</button>
       <button class="link-btn" onclick="showSection('product')">Genvium</button>
+      <button class="link-btn" onclick="showSection('zawadi')">Zawadi Ads</button>
+      <button class="link-btn" onclick="showSection('games')">Games</button>
       <button class="link-btn" onclick="showSection('about')">About Us</button>
       <button class="link-btn" onclick="showSection('contact')">Contact</button>
-      <a class="nav-btn" href="https://www.genvium.com" target="_blank">Visit Genvium</a>
     </nav>
   </header>
 
@@ -468,6 +537,20 @@
           <div class="feature-card"><h3>Searchable database</h3><p>Quickly filter and review opportunities relevant to your startup, industry, and stage of growth.</p></div>
           <div class="feature-card"><h3>Built for founders</h3><p>Designed to simplify funding research workflows so startups can move faster with greater clarity.</p></div>
         </div>
+      </div>
+    </section>
+
+    <section id="zawadi" class="section">
+      <div class="zawadi-page">
+        <h1>Advertise with Zawadi Media</h1>
+        <p>Coming Soon!</p>
+      </div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="games-page">
+        <h1>Games by Auduvant Technologies</h1>
+        <p>Coming Soon!</p>
       </div>
     </section>
 
